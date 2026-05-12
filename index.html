@@ -23,26 +23,29 @@
         .section-title h2 { font-size: 2rem; color: var(--primary); position: relative; padding-bottom: 10px; }
         .section-title h2::after { content: ''; width: 60px; height: 3px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-        /* 技術規範區塊 */
+        /* 技術規範 */
         .spec-box { background: #fffaf5; border: 1px solid #ffeada; border-radius: 15px; padding: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
         .spec-item { text-align: center; }
-        .spec-item i { font-size: 1.5rem; color: var(--accent); display: block; margin-bottom: 10px; }
         .spec-item span { font-weight: bold; color: #5d4037; font-size: 1.1rem; }
 
         /* 實拍照展示區 */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-        .gallery-card { border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; background: #fff; }
+        .gallery-card { border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; background: #fff; border: 1px solid #eee; }
         .gallery-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
-        .gallery-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #eee; }
+        .gallery-img { width: 100%; height: 220px; object-fit: cover; }
         .gallery-info { padding: 15px; text-align: center; }
-        .gallery-info h4 { margin: 0 0 8px; color: var(--primary); font-size: 1.2rem; }
         .badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-top: 5px; }
         .e0 { background: #e8f5e9; color: #2e7d32; }
-        .e1 { background: #e3f2fd; color: #1565c0; }
 
-        /* 按鈕樣式 */
-        .btn { display: inline-block; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; cursor: pointer; }
-        .btn-primary { background: var(--accent); color: white; }
+        /* 恢復五步驟流程圖樣式 */
+        .process-container { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; margin-top: 30px; }
+        .process-step { flex: 1; min-width: 150px; text-align: center; padding: 15px; }
+        .step-number { width: 50px; height: 50px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; font-size: 1.4rem; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); }
+        .step-arrow { display: flex; align-items: center; padding-top: 30px; color: #ddd; font-size: 1.8rem; font-weight: bold; }
+
+        /* 按鈕 */
+        .btn { display: inline-block; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: var(--accent); color: white; margin-top: 20px; }
         .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
         .btn:hover { opacity: 0.9; transform: scale(1.05); }
 
@@ -50,7 +53,8 @@
 
         @media (max-width: 768px) {
             .section { padding: 2rem 5%; }
-            nav { flex-direction: column; gap: 10px; }
+            .process-container { flex-direction: column; align-items: center; }
+            .step-arrow { transform: rotate(90deg); padding: 10px 0; }
         }
     </style>
 </head>
@@ -108,9 +112,39 @@
         <div class="section-title">
             <h2>設計師合作流程</h2>
         </div>
-        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <p>1. 提供 PDF 圖面 → 2. 線上上傳 → 3. 專業對圖拆料 → 4. 正式報價 → 5. 生產配送</p>
-            <a href="#" class="btn btn-primary" style="margin-top: 20px;">立即上傳設計圖 (Google Form)</a>
+        <div class="process-container">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>提供 PDF 圖面</h4>
+                <p style="font-size: 0.9rem; color: #666;">完整圖面與規格標註</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>上傳至平台</h4>
+                <p style="font-size: 0.9rem; color: #666;">傳送 PDF 或數據檔</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>專業對圖拆料</h4>
+                <p style="font-size: 0.9rem; color: #666;">技師確認加工細節</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>正式報價</h4>
+                <p style="font-size: 0.9rem; color: #666;">確認金額後開始排單</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <h4>生產配送</h4>
+                <p style="font-size: 0.9rem; color: #666;">準時配送至指定地點</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="#" class="btn btn-primary">立即上傳設計圖 (Google Form)</a>
         </div>
     </div>
 
