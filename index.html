@@ -32,12 +32,12 @@
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
         .gallery-card { border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; background: #fff; border: 1px solid #eee; }
         .gallery-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
-        .gallery-img { width: 100%; height: 220px; object-fit: cover; }
+        .gallery-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
         .gallery-info { padding: 15px; text-align: center; }
         .badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-top: 5px; }
         .e0 { background: #e8f5e9; color: #2e7d32; }
 
-        /* 恢復五步驟流程圖樣式 */
+        /* 五步驟流程圖樣式 */
         .process-container { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; margin-top: 30px; }
         .process-step { flex: 1; min-width: 150px; text-align: center; padding: 15px; }
         .step-number { width: 50px; height: 50px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; font-size: 1.4rem; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); }
@@ -59,7 +59,6 @@
     </style>
 </head>
 <body>
-
     <nav>
         <div class="logo">裕大 YU DA</div>
         <div class="nav-links">
@@ -75,9 +74,7 @@
     </header>
 
     <div class="section">
-        <div class="section-title">
-            <h2>裕大技術規範</h2>
-        </div>
+        <div class="section-title"><h2>裕大技術規範</h2></div>
         <div class="spec-box">
             <div class="spec-item"><span>環保低甲醛</span><br><small>採用 E0 / E1 等級板材</small></div>
             <div class="spec-item"><span>專業封邊</span><br><small>ABS / PVC 封邊技術</small></div>
@@ -86,9 +83,7 @@
     </div>
 
     <div class="section" style="background-color: var(--bg-light);">
-        <div class="section-title">
-            <h2>精選板材實拍照</h2>
-        </div>
+        <div class="section-title"><h2>精選主打色</h2></div>
         <div class="gallery-grid">
             <div class="gallery-card">
                 <img src="images/K530墨灰.jpg" alt="墨灰" class="gallery-img">
@@ -104,55 +99,28 @@
             </div>
         </div>
         <div style="text-align: center; margin-top: 40px;">
-            <a href="colors.html" class="btn btn-outline">🔍 查看完整色板目錄</a>
+            <a href="colors.html" class="btn btn-outline">🔍 查看完整 40 款色板目錄</a>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">
-            <h2>設計師合作流程</h2>
-        </div>
+        <div class="section-title"><h2>設計師合作流程</h2></div>
         <div class="process-container">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <h4>提供 PDF 圖面</h4>
-                <p style="font-size: 0.9rem; color: #666;">完整圖面與規格標註</p>
-            </div>
+            <div class="process-step"><div class="step-number">1</div><h4>提供 PDF 圖面</h4><p style="font-size: 0.9rem; color: #666;">完整圖面與規格標註</p></div>
             <div class="step-arrow">→</div>
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <h4>上傳至平台</h4>
-                <p style="font-size: 0.9rem; color: #666;">傳送 PDF 或數據檔</p>
-            </div>
+            <div class="process-step"><div class="step-number">2</div><h4>上傳至平台</h4><p style="font-size: 0.9rem; color: #666;">傳送 PDF 或數據檔</p></div>
             <div class="step-arrow">→</div>
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <h4>專業對圖拆料</h4>
-                <p style="font-size: 0.9rem; color: #666;">技師確認加工細節</p>
-            </div>
+            <div class="process-step"><div class="step-number">3</div><h4>專業對圖拆料</h4><p style="font-size: 0.9rem; color: #666;">技師確認加工細節</p></div>
             <div class="step-arrow">→</div>
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <h4>正式報價</h4>
-                <p style="font-size: 0.9rem; color: #666;">確認金額後開始排單</p>
-            </div>
+            <div class="process-step"><div class="step-number">4</div><h4>正式報價</h4><p style="font-size: 0.9rem; color: #666;">確認金額後開始排單</p></div>
             <div class="step-arrow">→</div>
-            <div class="process-step">
-                <div class="step-number">5</div>
-                <h4>生產配送</h4>
-                <p style="font-size: 0.9rem; color: #666;">準時配送至指定地點</p>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="#" class="btn btn-primary">立即上傳設計圖 (Google Form)</a>
+            <div class="process-step"><div class="step-number">5</div><h4>生產配送</h4><p style="font-size: 0.9rem; color: #666;">準時配送至指定地點</p></div>
         </div>
     </div>
 
     <div class="footer">
         <p><strong>裕大家具 | 御太系統櫃有限公司</strong></p>
-        <p>聯絡人：尤佩珊 | 電話：04-7703022</p>
-        <p>廠址：506彰化縣福興鄉沿海路二段一巷53號</p>
+        <p>聯絡人：尤佩珊 | 電話：04-7703022 | 廠址：506彰化縣福興鄉沿海路二段一巷53號</p>
     </div>
-
 </body>
 </html>
