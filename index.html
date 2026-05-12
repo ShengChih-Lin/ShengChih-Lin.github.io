@@ -13,7 +13,18 @@
         .card { border: 1px solid #eee; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: #fff; }
         .highlight { color: var(--accent); font-weight: bold; }
         
-        /* 流程圖樣式 */
+        /* 實拍照展示區樣式 */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .gallery-card { border: 1px solid #eee; border-radius: 10px; overflow: hidden; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.1); background: #fff; }
+        .gallery-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .gallery-img { width: 100%; height: 200px; object-fit: cover; background: #eee; display: block; }
+        .gallery-info { padding: 15px; text-align: center; }
+        .gallery-info h4 { margin: 0 0 5px; color: var(--primary); }
+        .gallery-info p { margin: 0; font-size: 0.85rem; color: #666; }
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-top: 5px; }
+        .e0 { background: #e8f5e9; color: #2e7d32; }
+        .e1 { background: #e3f2fd; color: #1565c0; }
+
         .process-container { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; margin-top: 30px; }
         .process-step { flex: 1; min-width: 150px; text-align: center; padding: 15px; }
         .step-number { width: 40px; height: 40px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem; }
@@ -35,6 +46,17 @@
         <p>深度整合「新曉元」系統 · 高效率拆料 · 精準裁切</p>
     </header>
 
+    <div class="section" style="background-color: #fffaf5; border-bottom: 1px solid #ffeada;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: var(--accent); text-align: center;">裕大技術規範摘要</h2>
+            <ul style="font-size: 1.1rem; color: #5d4037;">
+                <li>採用 <span class="highlight">E0 / E1 等級</span> 環保低甲醛板材</li>
+                <li>專業 <span class="highlight">ABS / PVC 封邊</span> 技術</li>
+                <li>支援 <span class="highlight">特殊厚板 (40mm / 50mm)</span> 仿厚加工</li>
+            </ul>
+        </div>
+    </div>
+
     <div class="section">
         <h2 style="text-align:center;">我們的核心優勢</h2>
         <div class="grid">
@@ -53,41 +75,76 @@
         </div>
     </div>
 
+    <div class="section" style="background-color: #fff;">
+        <h2 style="text-align:center;">精選板材實拍照</h2>
+        <p style="text-align:center; color: #666; margin-bottom: 30px;">實品拍攝，支援多元厚度與特殊加工</p>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="images/K530墨灰.jpg" alt="墨灰" class="gallery-img">
+                <div class="gallery-info">
+                    <h4>K530 墨灰</h4>
+                    <p>沉穩質感 / 現代風格</p>
+                    <span class="badge e0">E0 等級</span>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/K6356雪雲岩.jpg" alt="雪雲岩" class="gallery-img">
+                <div class="gallery-info">
+                    <h4>K6356 雪雲岩</h4>
+                    <p>石紋觸感 / 仿厚加工</p>
+                    <span class="badge e0">E0 等級</span>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/K6357白雲岩.jpg" alt="白雲岩" class="gallery-img">
+                <div class="gallery-info">
+                    <h4>K6357 白雲岩</h4>
+                    <p>亮雅石紋 / 空間放大</p>
+                    <span class="badge e0">E0 等級</span>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/K4819波斯胡桃.jpg" alt="波斯胡桃" class="gallery-img">
+                <div class="gallery-info">
+                    <h4>K4819 波斯胡桃</h4>
+                    <p>溫潤木紋 / 自然氣息</p>
+                    <span class="badge e0">E0 等級</span>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/1185冰島白橡.jpg" alt="冰島白橡" class="gallery-img">
+                <div class="gallery-info">
+                    <h4>1185 冰島白橡</h4>
+                    <p>北歐風格 / 經典百搭</p>
+                    <span class="badge e1">E1 等級</span>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/K510薄荷綠.jpg" alt="薄荷綠" class="gallery-img">
+                <div class="gallery-info">
+                    <h4>K510 薄荷綠</h4>
+                    <p>特色彩板 / 設計亮點</p>
+                    <span class="badge e0">E0 等級</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="section" style="background-color: #f9f9f9;">
         <h2 style="text-align:center;">設計師合作流程</h2>
         <div class="process-container">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <h4>提供 PDF 圖面</h4>
-                <p>提供完整圖面與板材規格標註</p>
-            </div>
+            <div class="process-step"><div class="step-number">1</div><h4>提供 PDF 圖面</h4><p>完整圖面與規格標註</p></div>
             <div class="step-arrow">→</div>
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <h4>上傳至本平台</h4>
-                <p>上傳 PDF 或新曉元數據檔</p>
-            </div>
+            <div class="process-step"><div class="step-number">2</div><h4>上傳至本平台</h4><p>上傳 PDF 或新曉元數據</p></div>
             <div class="step-arrow">→</div>
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <h4>對圖拆料</h4>
-                <p>技師對圖並使用新曉元拆料</p>
-            </div>
+            <div class="process-step"><div class="step-number">3</div><h4>對圖拆料</h4><p>專業技師精準對圖</p></div>
             <div class="step-arrow">→</div>
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <h4>正式報價</h4>
-                <p>確認細節後提供準確報價</p>
-            </div>
+            <div class="process-step"><div class="step-number">4</div><h4>正式報價</h4><p>細節確認後提供報價</p></div>
             <div class="step-arrow">→</div>
-            <div class="process-step">
-                <div class="step-number">5</div>
-                <h4>生產配送</h4>
-                <p>自動化生產並準時配送</p>
-            </div>
+            <div class="process-step"><div class="step-number">5</div><h4>生產配送</h4><p>自動化生產與準時配送</p></div>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <a href="#" class="cta-button">立即上傳設計圖 (範例連結)</a>
+            <a href="#" class="cta-button">立即上傳設計圖 (Google Form)</a>
         </div>
     </div>
 
@@ -99,27 +156,11 @@
     </div>
 
     <script>
-        // 1. 動態歡迎詞
         const now = new Date();
         const hours = now.getHours();
-        let greeting = "";
-        if (hours < 12) greeting = "早安！準備好今天的拆料清單了嗎？";
-        else if (hours < 18) greeting = "午安！工廠持續為您生產中。";
-        else greeting = "晚安！歡迎預約明天的拆料排程。";
-        
+        let greeting = (hours < 12) ? "早安！準備好今天的拆料清單了嗎？" : (hours < 18) ? "午安！工廠持續為您生產中。" : "晚安！歡迎預約明天的拆料排程。";
         const msgElement = document.getElementById('welcome-msg');
         if(msgElement) msgElement.innerText = greeting;
-
-        // 2. 按鈕縮放效果
-        const ctaBtn = document.querySelector('.cta-button');
-        if(ctaBtn) {
-            ctaBtn.addEventListener('mouseover', function() {
-                this.style.transform = 'scale(1.1)';
-            });
-            ctaBtn.addEventListener('mouseout', function() {
-                this.style.transform = 'scale(1)';
-            });
-        }
     </script>
 </body>
 </html>
