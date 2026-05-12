@@ -1,54 +1,209 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>板材色板目錄 | 裕大系統櫃</title>
-    <style>
-        :root { --primary: #2c3e50; --accent: #d35400; }
-        body { font-family: "Microsoft JhengHei", Arial, sans-serif; margin: 0; background: #f8f9fa; }
-        nav { background: var(--primary); padding: 1rem; text-align: center; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-        .container { padding: 2rem 5%; }
-        h1 { text-align: center; color: var(--primary); }
-        
-        .filter-info { text-align: center; margin-bottom: 30px; color: #666; }
-        .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
-        .color-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; padding-bottom: 10px; }
-        .color-img { width: 100%; height: 180px; object-fit: cover; background: #eee; }
-        .color-name { font-weight: bold; margin: 10px 0 5px; font-size: 1.1rem; }
-        .color-meta { font-size: 0.8rem; color: #888; }
-        .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; margin-top: 5px; }
-        .e0 { background: #e8f5e9; color: #2e7d32; }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="index.html">返回首頁</a>
-        <a href="#">色板目錄</a>
-    </nav>
+<h3 style="grid-column: 1/-1; margin-top: 30px; border-left: 5px solid #d35400; padding-left: 10px;">經典木紋系列</h3>
+<div class="color-card">
+    <img src="images/1185冰島白橡.jpg" class="color-img">
+    <div class="color-name">1185 冰島白橡</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/A3002所諾瑪原橡.jpg" class="color-img">
+    <div class="color-name">A3002 所諾瑪原橡</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/A3846長山核桃.jpg" class="color-img">
+    <div class="color-name">A3846 長山核桃</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K2091丹麥櫸木.jpg" class="color-img">
+    <div class="color-name">K2091 丹麥櫸木</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K2187哥倫比亞胡桃.jpg" class="color-img">
+    <div class="color-name">K2187 哥倫比亞胡桃</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K3356北山白橡.jpg" class="color-img">
+    <div class="color-name">K3356 北山白橡</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K4819波斯胡桃.jpg" class="color-img">
+    <div class="color-name">K4819 波斯胡桃</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K5007摩卡柚木.jpg" class="color-img">
+    <div class="color-name">K5007 摩卡柚木</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K6396大都會黑松.jpg" class="color-img">
+    <div class="color-name">K6396 大都會黑松</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/S381札拉淺橡.jpg" class="color-img">
+    <div class="color-name">S381 札拉淺橡</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/S382_K3382M札拉金橡.jpg" class="color-img">
+    <div class="color-name">S382 札拉金橡</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/S383_K3383M札拉灰橡.jpg" class="color-img">
+    <div class="color-name">S383 札拉灰橡</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/W551康沃爾橡木.jpg" class="color-img">
+    <div class="color-name">W551 康沃爾橡木</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/雪白榆木4143.jpg" class="color-img">
+    <div class="color-name">4143 雪白榆木</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
 
-    <div class="container">
-        <h1>裕大板材全系列色板</h1>
-        <p class="filter-info">點擊圖片可放大查看紋路細節 (開發中) | 均符合 E0/E1 環保標準</p>
-        
-        <div class="color-grid">
-            <div class="color-card">
-                <img src="images/K530墨灰.jpg" class="color-img">
-                <div class="color-name">K530 墨灰</div>
-                <div class="color-meta">E0 等級 / 現代風格</div>
-            </div>
-            <div class="color-card">
-                <img src="images/K6356雪雲岩.jpg" class="color-img">
-                <div class="color-name">K6356 雪雲岩</div>
-                <div class="color-meta">E0 等級 / 石紋系列</div>
-            </div>
-            <div class="color-card">
-                <img src="images/K4819波斯胡桃.jpg" class="color-img">
-                <div class="color-name">K4819 波斯胡桃</div>
-                <div class="color-meta">E0 等級 / 自然木紋</div>
-            </div>
-            </div>
-    </div>
-</body>
-</html>
+<h3 style="grid-column: 1/-1; margin-top: 30px; border-left: 5px solid #d35400; padding-left: 10px;">石紋與工藝系列</h3>
+<div class="color-card">
+    <img src="images/K6356雪雲岩.jpg" class="color-img">
+    <div class="color-name">K6356 雪雲岩</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K6357M白雲岩.jpg" class="color-img">
+    <div class="color-name">K6357M 白雲岩</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K6359黑雲岩.jpg" class="color-img">
+    <div class="color-name">K6359 黑雲岩</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K6463米霧岩.jpg" class="color-img">
+    <div class="color-name">K6463 米霧岩</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K6465灰霧岩.jpg" class="color-img">
+    <div class="color-name">K6465 灰霧岩</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K8765灰抿石.jpg" class="color-img">
+    <div class="color-name">K8765 灰抿石</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/L3469水泥刮花清水模.jpg" class="color-img">
+    <div class="color-name">L3469 水泥刮花清水模</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+
+<h3 style="grid-column: 1/-1; margin-top: 30px; border-left: 5px solid #d35400; padding-left: 10px;">布紋與織紗系列</h3>
+<div class="color-card">
+    <img src="images/322F灰織紗.jpg" class="color-img">
+    <div class="color-name">322F 灰織紗</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/394F布紋灰.jpg" class="color-img">
+    <div class="color-name">394F 布紋灰</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/49F亞麻布紋灰.jpg" class="color-img">
+    <div class="color-name">49F 亞麻布紋灰</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K003米布織.jpg" class="color-img">
+    <div class="color-name">K003 米布織</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K007黑布織.jpg" class="color-img">
+    <div class="color-name">K007 黑布織</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+
+<h3 style="grid-column: 1/-1; margin-top: 30px; border-left: 5px solid #d35400; padding-left: 10px;">素色與純淨系列</h3>
+<div class="color-card">
+    <img src="images/潔白201.jpg" class="color-img">
+    <div class="color-name">201 潔白</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/JM555波特蘭牙白.jpg" class="color-img">
+    <div class="color-name">JM555 波特蘭牙白</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/201H2白浮雕.jpg" class="color-img">
+    <div class="color-name">201H2 白浮雕</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/702H羊毛米灰.jpg" class="color-img">
+    <div class="color-name">702H 羊毛米灰</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K528暖灰.jpg" class="color-img">
+    <div class="color-name">K528 暖灰</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/D217冰灰.jpg" class="color-img">
+    <div class="color-name">D217 冰灰</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/3203-淺灰色.jpg" class="color-img">
+    <div class="color-name">3203 淺灰色</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/MS727H石頭灰.jpg" class="color-img">
+    <div class="color-name">MS727H 石頭灰</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K530墨灰.jpg" class="color-img">
+    <div class="color-name">K530 墨灰</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+
+<h3 style="grid-column: 1/-1; margin-top: 30px; border-left: 5px solid #d35400; padding-left: 10px;">繽紛色彩系列</h3>
+<div class="color-card">
+    <img src="images/K510薄荷綠.jpg" class="color-img">
+    <div class="color-name">K510 薄荷綠</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K511粉玫.jpg" class="color-img">
+    <div class="color-name">K511 粉玫</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K517天藍.jpg" class="color-img">
+    <div class="color-name">K517 天藍</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/K522抹茶綠.jpg" class="color-img">
+    <div class="color-name">K522 抹茶綠</div>
+    <div class="color-meta"><span class="badge e0">E0 等級</span></div>
+</div>
+<div class="color-card">
+    <img src="images/D230深海藍.jpg" class="color-img">
+    <div class="color-name">D230 深海藍</div>
+    <div class="color-meta"><span class="badge e1">E1 等級</span></div>
+</div>
