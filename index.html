@@ -16,34 +16,39 @@
         .footer { background: #f4f4f4; text-align: center; padding: 2rem; font-size: 0.9rem; }
     </style>
 </head>
-   <script>
-    // 1. 動態歡迎詞：根據時間顯示早安/午安
-    const now = new Date();
-    const hours = now.getHours();
-    let greeting = "";
-    if (hours < 12) greeting = "早安！準備好今天的拆料清單了嗎？";
-    else if (hours < 18) greeting = "午安！工廠持續為您生產中。";
-    else greeting = "晚安！歡迎預約明天的拆料排程。";
-    
-    // 假設你在 header 裡有個 id="welcome-msg" 的標籤
-    // document.getElementById('welcome-msg').innerText = greeting;
-
-    // 2. 按鈕點擊小驚喜
-    const ctaBtn = document.querySelector('.cta-button');
-    ctaBtn.addEventListener('mouseover', function() {
-        this.style.transform = 'scale(1.1)';
-        this.style.transition = '0.3s';
-    });
-    ctaBtn.addEventListener('mouseout', function() {
-        this.style.transform = 'scale(1)';
-    });
-</script> 
 <body>
+    <header>
+        <h1>專業系統櫃拆料加工廠</h1>
+        <p id="welcome-msg" style="color: #ffcc00; font-weight: bold;"></p>
+        <p>深度整合「新曉元」系統 · 高效率拆料 · 精準裁切</p>
+    </header>
 
-<header>
-    <h1>裕大專業系統櫃拆料加工廠</h1>
-    <p>深度整合「新曉元」系統 · 高效率拆料 · 精準裁切</p>
-</header>
+    <script>
+        // 1. 動態歡迎詞
+        const now = new Date();
+        const hours = now.getHours();
+        let greeting = "";
+        if (hours < 12) greeting = "早安！準備好今天的拆料清單了嗎？";
+        else if (hours < 18) greeting = "午安！工廠持續為您生產中。";
+        else greeting = "晚安！歡迎預約明天的拆料排程。";
+        
+        // 啟動歡迎詞（這行要把註解拿掉）
+        const msgElement = document.getElementById('welcome-msg');
+        if(msgElement) msgElement.innerText = greeting;
+
+        // 2. 按鈕縮放效果
+        const ctaBtn = document.querySelector('.cta-button');
+        if(ctaBtn) {
+            ctaBtn.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.transition = '0.3s';
+            });
+            ctaBtn.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+            });
+        }
+    </script>
+</body>
 
 <div class="section">
     <h2 style="text-align:center;">我們的核心優勢</h2>
