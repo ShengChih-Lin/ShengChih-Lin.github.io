@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>板材色板目錄 | 裕大系統櫃</title>
+    <style>
+        :root { --primary: #2c3e50; --accent: #d35400; }
+        body { font-family: "Microsoft JhengHei", Arial, sans-serif; margin: 0; background: #f8f9fa; }
+        nav { background: var(--primary); padding: 1rem; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        .container { padding: 2rem 5%; }
+        h1 { text-align: center; color: var(--primary); }
+        
+        .filter-info { text-align: center; margin-bottom: 30px; color: #666; }
+        .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+        .color-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; padding-bottom: 10px; }
+        .color-img { width: 100%; height: 180px; object-fit: cover; background: #eee; }
+        .color-name { font-weight: bold; margin: 10px 0 5px; font-size: 1.1rem; }
+        .color-meta { font-size: 0.8rem; color: #888; }
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; margin-top: 5px; }
+        .e0 { background: #e8f5e9; color: #2e7d32; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">返回首頁</a>
+        <a href="#">色板目錄</a>
+    </nav>
 
+    <div class="container">
+        <h1>裕大板材全系列色板</h1>
+        <p class="filter-info">點擊圖片可放大查看紋路細節 (開發中) | 均符合 E0/E1 環保標準</p>
+        
+        <div class="color-grid">
+            <div class="color-card">
+                <img src="images/K530墨灰.jpg" class="color-img">
+                <div class="color-name">K530 墨灰</div>
+                <div class="color-meta">E0 等級 / 現代風格</div>
+            </div>
+            <div class="color-card">
+                <img src="images/K6356雪雲岩.jpg" class="color-img">
+                <div class="color-name">K6356 雪雲岩</div>
+                <div class="color-meta">E0 等級 / 石紋系列</div>
+            </div>
+            <div class="color-card">
+                <img src="images/K4819波斯胡桃.jpg" class="color-img">
+                <div class="color-name">K4819 波斯胡桃</div>
+                <div class="color-meta">E0 等級 / 自然木紋</div>
+            </div>
+            </div>
+    </div>
+</body>
+</html>
