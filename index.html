@@ -5,162 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>裕大系統櫃拆料加工廠 | 專業新曉元對接</title>
     <style>
-        :root { --primary: #2c3e50; --accent: #d35400; }
-        body { font-family: "Microsoft JhengHei", Arial, sans-serif; line-height: 1.6; margin: 0; color: #333; }
-        header { background: var(--primary); color: white; padding: 3rem 1rem; text-align: center; }
-        .section { padding: 3rem 10%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { border: 1px solid #eee; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: #fff; }
-        .highlight { color: var(--accent); font-weight: bold; }
+        :root { --primary: #2c3e50; --accent: #d35400; --bg-light: #f8f9fa; }
+        body { font-family: "Microsoft JhengHei", Arial, sans-serif; line-height: 1.6; margin: 0; color: #333; background-color: #fff; }
         
-        /* 實拍照展示區樣式 */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
-        .gallery-card { border: 1px solid #eee; border-radius: 10px; overflow: hidden; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.1); background: #fff; }
-        .gallery-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        .gallery-img { width: 100%; height: 200px; object-fit: cover; background: #eee; display: block; }
+        /* 導覽列 */
+        nav { background: var(--primary); padding: 1rem 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav .logo { color: white; font-weight: bold; font-size: 1.4rem; }
+        nav .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.95rem; transition: 0.3s; }
+        nav .nav-links a:hover { color: #ffcc00; }
+
+        header { background: #34495e; color: white; padding: 4rem 1rem; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
+        header p { opacity: 0.9; margin-top: 10px; font-size: 1.1rem; }
+
+        .section { padding: 4rem 10%; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2rem; color: var(--primary); position: relative; padding-bottom: 10px; }
+        .section-title h2::after { content: ''; width: 60px; height: 3px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        /* 技術規範區塊 */
+        .spec-box { background: #fffaf5; border: 1px solid #ffeada; border-radius: 15px; padding: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .spec-item { text-align: center; }
+        .spec-item i { font-size: 1.5rem; color: var(--accent); display: block; margin-bottom: 10px; }
+        .spec-item span { font-weight: bold; color: #5d4037; font-size: 1.1rem; }
+
+        /* 實拍照展示區 */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+        .gallery-card { border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; background: #fff; }
+        .gallery-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+        .gallery-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #eee; }
         .gallery-info { padding: 15px; text-align: center; }
-        .gallery-info h4 { margin: 0 0 5px; color: var(--primary); }
-        .gallery-info p { margin: 0; font-size: 0.85rem; color: #666; }
-        .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-top: 5px; }
+        .gallery-info h4 { margin: 0 0 8px; color: var(--primary); font-size: 1.2rem; }
+        .badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-top: 5px; }
         .e0 { background: #e8f5e9; color: #2e7d32; }
         .e1 { background: #e3f2fd; color: #1565c0; }
 
-        .process-container { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; margin-top: 30px; }
-        .process-step { flex: 1; min-width: 150px; text-align: center; padding: 15px; }
-        .step-number { width: 40px; height: 40px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem; }
-        .step-arrow { display: flex; align-items: center; padding-top: 25px; color: #ccc; font-size: 1.5rem; font-weight: bold; }
-        
-        .cta-button { background: var(--accent); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-size: 1.2rem; display: inline-block; margin-top: 20px; transition: 0.3s; }
-        .footer { background: #f4f4f4; text-align: center; padding: 2rem; font-size: 0.9rem; border-top: 1px solid #ddd; }
+        /* 按鈕樣式 */
+        .btn { display: inline-block; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; cursor: pointer; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+        .btn:hover { opacity: 0.9; transform: scale(1.05); }
+
+        .footer { background: #f4f4f4; text-align: center; padding: 3rem; font-size: 0.9rem; border-top: 1px solid #ddd; }
 
         @media (max-width: 768px) {
-            .process-container { flex-direction: column; align-items: center; }
-            .step-arrow { transform: rotate(90deg); padding: 10px 0; }
+            .section { padding: 2rem 5%; }
+            nav { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
+
+    <nav>
+        <div class="logo">裕大 YU DA</div>
+        <div class="nav-links">
+            <a href="index.html">首頁</a>
+            <a href="colors.html">色板目錄</a>
+            <a href="tel:04-7703022">電話聯繫</a>
+        </div>
+    </nav>
+
     <header>
-        <h1>裕大專業系統櫃拆料加工廠</h1>
-        <p id="welcome-msg" style="color: #ffcc00; font-weight: bold; min-height: 1.6em;"></p>
-        <p>深度整合「新曉元」系統 · 高效率拆料 · 精準裁切</p>
+        <h1>裕大系統櫃拆料加工廠</h1>
+        <p>專業新曉元對接 · 數位化生產 · 職人級封邊</p>
     </header>
 
-    <div class="section" style="background-color: #fffaf5; border-bottom: 1px solid #ffeada;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="color: var(--accent); text-align: center;">裕大技術規範摘要</h2>
-            <ul style="font-size: 1.1rem; color: #5d4037;">
-                <li>採用 <span class="highlight">E0 / E1 等級</span> 環保低甲醛板材</li>
-                <li>專業 <span class="highlight">ABS / PVC 封邊</span> 技術</li>
-                <li>支援 <span class="highlight">特殊厚板 (40mm / 50mm)</span> 仿厚加工</li>
-            </ul>
+    <div class="section">
+        <div class="section-title">
+            <h2>裕大技術規範</h2>
+        </div>
+        <div class="spec-box">
+            <div class="spec-item"><span>環保低甲醛</span><br><small>採用 E0 / E1 等級板材</small></div>
+            <div class="spec-item"><span>專業封邊</span><br><small>ABS / PVC 封邊技術</small></div>
+            <div class="spec-item"><span>仿厚加工</span><br><small>支援 40mm / 50mm 特殊規格</small></div>
+        </div>
+    </div>
+
+    <div class="section" style="background-color: var(--bg-light);">
+        <div class="section-title">
+            <h2>精選板材實拍照</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="images/K530墨灰.jpg" alt="墨灰" class="gallery-img">
+                <div class="gallery-info"><h4>K530 墨灰</h4><span class="badge e0">E0 標準</span></div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/K6356雪雲岩.jpg" alt="雪雲岩" class="gallery-img">
+                <div class="gallery-info"><h4>K6356 雪雲岩</h4><span class="badge e0">E0 標準</span></div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/K4819波斯胡桃.jpg" alt="波斯胡桃" class="gallery-img">
+                <div class="gallery-info"><h4>K4819 波斯胡桃</h4><span class="badge e0">E0 標準</span></div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="colors.html" class="btn btn-outline">🔍 查看完整色板目錄</a>
         </div>
     </div>
 
     <div class="section">
-        <h2 style="text-align:center;">我們的核心優勢</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>🛠️ 系統化拆料</h3>
-                <p>我們精通 <span class="highlight">新曉元軟體</span>，能直接接收設計圖檔，將板件損耗降到最低，確保尺寸 100% 精確。</p>
-            </div>
-            <div class="card">
-                <h3>📏 專業裁切封邊</h3>
-                <p>全自動化設備生產，提供各式厚薄封邊條處理，孔位精準，到場即組裝。</p>
-            </div>
-            <div class="card">
-                <h3>🚚 穩定物流配送</h3>
-                <p>專門的搬運與物流流程，保護板材不傷角，準時送達您的工地或工作室。</p>
-            </div>
+        <div class="section-title">
+            <h2>設計師合作流程</h2>
         </div>
-    </div>
-
-    <div class="section" style="background-color: #fff;">
-        <h2 style="text-align:center;">精選板材實拍照</h2>
-        <p style="text-align:center; color: #666; margin-bottom: 30px;">實品拍攝，支援多元厚度與特殊加工</p>
-        <div class="gallery-grid">
-            <div class="gallery-card">
-                <img src="images/K530墨灰.jpg" alt="墨灰" class="gallery-img">
-                <div class="gallery-info">
-                    <h4>K530 墨灰</h4>
-                    <p>沉穩質感 / 現代風格</p>
-                    <span class="badge e0">E0 等級</span>
-                </div>
-            </div>
-            <div class="gallery-card">
-                <img src="images/K6356雪雲岩.jpg" alt="雪雲岩" class="gallery-img">
-                <div class="gallery-info">
-                    <h4>K6356 雪雲岩</h4>
-                    <p>石紋觸感 / 仿厚加工</p>
-                    <span class="badge e0">E0 等級</span>
-                </div>
-            </div>
-            <div class="gallery-card">
-                <img src="images/K6357白雲岩.jpg" alt="白雲岩" class="gallery-img">
-                <div class="gallery-info">
-                    <h4>K6357 白雲岩</h4>
-                    <p>亮雅石紋 / 空間放大</p>
-                    <span class="badge e0">E0 等級</span>
-                </div>
-            </div>
-            <div class="gallery-card">
-                <img src="images/K4819波斯胡桃.jpg" alt="波斯胡桃" class="gallery-img">
-                <div class="gallery-info">
-                    <h4>K4819 波斯胡桃</h4>
-                    <p>溫潤木紋 / 自然氣息</p>
-                    <span class="badge e0">E0 等級</span>
-                </div>
-            </div>
-            <div class="gallery-card">
-                <img src="images/1185冰島白橡.jpg" alt="冰島白橡" class="gallery-img">
-                <div class="gallery-info">
-                    <h4>1185 冰島白橡</h4>
-                    <p>北歐風格 / 經典百搭</p>
-                    <span class="badge e1">E1 等級</span>
-                </div>
-            </div>
-            <div class="gallery-card">
-                <img src="images/K510薄荷綠.jpg" alt="薄荷綠" class="gallery-img">
-                <div class="gallery-info">
-                    <h4>K510 薄荷綠</h4>
-                    <p>特色彩板 / 設計亮點</p>
-                    <span class="badge e0">E0 等級</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section" style="background-color: #f9f9f9;">
-        <h2 style="text-align:center;">設計師合作流程</h2>
-        <div class="process-container">
-            <div class="process-step"><div class="step-number">1</div><h4>提供 PDF 圖面</h4><p>完整圖面與規格標註</p></div>
-            <div class="step-arrow">→</div>
-            <div class="process-step"><div class="step-number">2</div><h4>上傳至本平台</h4><p>上傳 PDF 或新曉元數據</p></div>
-            <div class="step-arrow">→</div>
-            <div class="process-step"><div class="step-number">3</div><h4>對圖拆料</h4><p>專業技師精準對圖</p></div>
-            <div class="step-arrow">→</div>
-            <div class="process-step"><div class="step-number">4</div><h4>正式報價</h4><p>細節確認後提供報價</p></div>
-            <div class="step-arrow">→</div>
-            <div class="process-step"><div class="step-number">5</div><h4>生產配送</h4><p>自動化生產與準時配送</p></div>
-        </div>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="#" class="cta-button">立即上傳設計圖 (Google Form)</a>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <p>1. 提供 PDF 圖面 → 2. 線上上傳 → 3. 專業對圖拆料 → 4. 正式報價 → 5. 生產配送</p>
+            <a href="#" class="btn btn-primary" style="margin-top: 20px;">立即上傳設計圖 (Google Form)</a>
         </div>
     </div>
 
     <div class="footer">
-        <h3>裕大系統櫃拆料加工廠</h3>
+        <p><strong>裕大家具 | 御太系統櫃有限公司</strong></p>
         <p>聯絡人：尤佩珊 | 電話：04-7703022</p>
         <p>廠址：506彰化縣福興鄉沿海路二段一巷53號</p>
-        <p>&copy; 2026 裕大系統櫃加工所. All rights reserved.</p>
     </div>
 
-    <script>
-        const now = new Date();
-        const hours = now.getHours();
-        let greeting = (hours < 12) ? "早安！準備好今天的拆料清單了嗎？" : (hours < 18) ? "午安！工廠持續為您生產中。" : "晚安！歡迎預約明天的拆料排程。";
-        const msgElement = document.getElementById('welcome-msg');
-        if(msgElement) msgElement.innerText = greeting;
-    </script>
 </body>
 </html>
